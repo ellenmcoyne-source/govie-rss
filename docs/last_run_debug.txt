@@ -1,0 +1,22 @@
+Last run: 2026-08-09T15:03:06.649915+00:00
+
+gov.ie – Publications (all departments): 18 items from https://www.gov.ie/en/publications/?sort_by=published_date
+Department of Agriculture, Food and the Marine: 5 items from https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/?sort_by=published_date
+Department of Children, Disability and Equality: 6 items from https://www.gov.ie/en/department-of-children-disability-and-equality/publications/?sort_by=published_date
+Department of Climate, Energy and the Environment: 9 items from https://www.gov.ie/en/department-of-climate-energy-and-the-environment/publications/?sort_by=published_date
+Department of Culture, Communications and Sport: 9 items from https://www.gov.ie/en/department-of-culture-communications-and-sport/publications/?sort_by=published_date
+Department of Defence: 9 items from https://www.gov.ie/en/department-of-defence/publications/?sort_by=published_date
+Department of Education and Youth: 9 items from https://www.gov.ie/en/department-of-education/publications/?sort_by=published_date
+Department of Finance: 10 items from https://www.gov.ie/en/department-of-finance/publications/?sort_by=published_date
+Department of Foreign Affairs and Trade: 10 items from https://www.gov.ie/en/department-of-foreign-affairs/publications/?sort_by=published_date
+Department of Further and Higher Education, Research, Innovation and Science: 10 items from https://www.gov.ie/en/department-of-further-and-higher-education-research-innovation-and-science/publications/?sort_by=published_date
+Department of Health: 10 items from https://www.gov.ie/en/department-of-health/publications/?sort_by=published_date
+Department of Housing, Local Government and Heritage: 0 items from https://www.gov.ie/en/department-of-housing-local-government-and-heritage/publications/?sort_by=published_date
+Department of Justice, Home Affairs and Migration: 0 items from https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/publications/?sort_by=published_date
+Department of Public Expenditure, Infrastructure, Public Service Reform and Digitalisation: 0 items from https://www.gov.ie/en/department-of-public-expenditure-infrastructure-public-service-reform-and-digitalisation/publications/?sort_by=published_date
+Department of Rural and Community Development and the Gaeltacht: 0 items from https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/publications/?sort_by=published_date
+Department of Social Protection: 0 items from https://www.gov.ie/en/department-of-social-protection/publications/?sort_by=published_date
+Department of the Taoiseach: 0 items from https://www.gov.ie/en/department-of-the-taoiseach/publications/?sort_by=published_date
+Department of Transport: 0 items from https://www.gov.ie/en/department-of-transport/publications/?sort_by=published_date
+[warn] 0 items parsed from https://enterprise.gov.ie/en/publications/
+Department of Enterprise, Tourism and Employment: 0 items from https://enterprise.gov.ie/en/publications/
