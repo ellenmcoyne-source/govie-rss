@@ -1,0 +1,60 @@
+name: Update Oireachtas committee publications feed
+
+on:
+  schedule:
+    # Every 2 hours (UTC) -- a bit gentler than the gov.ie feed, since this
+    # site has stricter bot-detection.
+    - cron: "20 */2 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "oireachtas/**"
+      - ".github/workflows/update-oireachtas-feed.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build feed
+        run: python oireachtas/oireachtas_feed_builder.py
+
+      - name: Commit and push updated feed
+        run: |
+          git config user.name "govie-rss-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/oireachtas-feed.xml docs/oireachtas-debug.txt
+          git diff --cached --quiet || git commit -m "Update Oireachtas feed $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: Set up Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload docs/ as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
