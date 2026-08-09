@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Irish Government Publications</title>
+    <link>https://www.gov.ie/en/publications/</link>
+    <description>New publications and documents from gov.ie and individual Irish government department websites.</description>
+    <language>en-ie</language>
+  </channel>
+</rss>
