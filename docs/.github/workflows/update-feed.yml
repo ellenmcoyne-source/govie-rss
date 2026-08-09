@@ -1,0 +1,58 @@
+name: Update gov.ie publications RSS feed
+
+on:
+  schedule:
+    # Runs at the top of every hour (UTC)
+    - cron: "0 * * * *"
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build feed
+        run: python feed_builder.py
+
+      - name: Commit and push updated feed
+        run: |
+          git config user.name "govie-rss-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/feed.xml docs/last_run_debug.txt
+          git diff --cached --quiet || git commit -m "Update feed $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+      # Publish docs/ straight to GitHub Pages via the Actions pipeline,
+      # bypassing Jekyll entirely (avoids the "dir_chdir0" Jekyll build error).
+      - name: Set up Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload docs/ as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
